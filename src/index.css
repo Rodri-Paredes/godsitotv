@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes glitch {
+  0% {
+    text-shadow: 0.05em 0 0 #ff00ff, -0.05em -0.025em 0 #00ffff;
+    transform: translate(0);
+  }
+  14% {
+    text-shadow: 0.05em 0 0 #ff00ff, -0.05em -0.025em 0 #00ffff;
+  }
+  15% {
+    text-shadow: -0.05em -0.025em 0 #ff00ff, 0.025em 0.025em 0 #00ffff;
+  }
+  49% {
+    text-shadow: -0.05em -0.025em 0 #ff00ff, 0.025em 0.025em 0 #00ffff;
+  }
+  50% {
+    text-shadow: 0.025em 0.05em 0 #ff00ff, 0.05em 0 0 #00ffff;
+  }
+  99% {
+    text-shadow: 0.025em 0.05em 0 #ff00ff, 0.05em 0 0 #00ffff;
+  }
+  100% {
+    text-shadow: -0.025em 0 0 #ff00ff, -0.025em -0.025em 0 #00ffff;
+    transform: translate(0);
+  }
+}
+
+.animate-glitch {
+  animation: glitch 1s infinite linear alternate-reverse;
+}
+
+@layer base {
+  body {
+    @apply bg-black text-white;
+  }
+}
