@@ -41,19 +41,26 @@ function App() {
     <div className="min-h-screen bg-black text-white">
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center bg-black overflow-hidden">
-  {/* Fondo con video o imagen */}
-  <div className="absolute inset-0 z-0">
-    <video
-      autoPlay
-      loop
-      muted
-      playsInline
-      className="w-full h-full object-cover opacity-30"
-      src="https://firebasestorage.googleapis.com/v0/b/texnoexpert-a1b93.appspot.com/o/Download3.mp4?alt=media&token=8d6ba255-02f5-4b85-a3dc-99fabaa9902d"
-    />
-    {/* Overlay negro con mezcla */}
-    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent mix-blend-multiply" />
-  </div>
+  {/* Fondo con video para desktop */}
+  <video
+    autoPlay
+    loop
+    muted
+    playsInline
+    className="hidden md:block absolute inset-0 w-full h-full object-cover opacity-30"
+    src="https://firebasestorage.googleapis.com/v0/b/texnoexpert-a1b93.appspot.com/o/Download3.mp4?alt=media&token=8d6ba255-02f5-4b85-a3dc-99fabaa9902d"
+    poster="https://firebasestorage.googleapis.com/v0/b/texnoexpert-a1b93.appspot.com/o/firme.jpg?alt=media&token=b04fd949-40aa-4541-8be3-4203947a830b"
+  />
+
+  {/* Imagen de fondo para mobile */}
+  <img
+    src="https://firebasestorage.googleapis.com/v0/b/texnoexpert-a1b93.appspot.com/o/firme.jpg?alt=media&token=b04fd949-40aa-4541-8be3-4203947a830b"
+    alt="Fondo móvil"
+    className="md:hidden absolute inset-0 w-full h-full object-cover opacity-30"
+  />
+
+  {/* Overlay negro con mezcla */}
+  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent mix-blend-multiply" />
 
   {/* Contenido */}
   <motion.div
@@ -66,22 +73,23 @@ function App() {
       <span className="text-fuchsia-500 animate-pulse">DIOSITO</span>TV
     </h1>
     <p className="mt-4 text-xl md:text-2xl text-purple-300 font-medium">
-    La comida me excita 🍔
+      La comida me excita 🍔
     </p>
 
-    {/* Botón (opcional) */}
+    {/* Botón que va a TikTok */}
     <div className="mt-8">
-    <a
-  href="https://www.tiktok.com/@diositotv?is_from_webapp=1&sender_device=pc" // ← reemplazá con tu link real si es otro
-  target="_blank"
-  rel="noopener noreferrer"
-  className="inline-block px-6 py-3 text-lg font-semibold text-white bg-purple-700 rounded-full hover:bg-purple-600 transition-all shadow-lg"
->
-  Ver en contenido
-</a>
+      <a
+        href="https://www.tiktok.com/@diositotv?is_from_webapp=1&sender_device=pc"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-block px-6 py-3 text-lg font-semibold text-white bg-purple-700 rounded-full hover:bg-purple-600 transition-all shadow-lg"
+      >
+        Ver contenido
+      </a>
     </div>
   </motion.div>
 </section>
+
 
       {/* Featured Videos */}
       <section className="py-20 bg-gradient-to-b from-black to-purple-900">
@@ -131,9 +139,7 @@ function App() {
             <div className="max-w-2xl">
               <h2 className="text-4xl font-bold mb-6">Sobre Mí</h2>
               <p className="text-xl leading-relaxed text-purple-200">
-                ¡Qué onda familia! Soy Diosito, tu creador de contenido favorito. 
-                Desde las calles hasta las redes, comparto mi flow, humor y buena vibra 
-                para inspirar a otros a ser su mejor versión. 🚀✨
+                Godsito el Rey de Los Tops, fitness a ratos y un poco de influencer 
               </p>
             </div>
           </div>
